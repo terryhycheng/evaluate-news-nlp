@@ -6,21 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evaluate News NLP</title>
   </head>
-  <body>
-    <header></header>
-    <main>
-      <section>
-        <h1>Hello World!</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quas
-          consequuntur facilis incidunt quia, velit ullam natus aperiam porro
-          distinctio architecto molestiae! Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Accusamus magni magnam vitae minima!
-          Ipsam qui illum aliquam? Nemo sit iusto qui, quidem autem laboriosam
-          maxime nostrum nesciunt consequatur, culpa natus.joqprjwo!
-        </p>
+  <body class="container">
+    <main class="box">
+      <section id="title">
+        <h1>Evaluate News NLP</h1>
+      </section>
+      <section class="card">
+        <div id="introduction">
+          <h2>What is NLP?</h2>
+          <p>
+            NLP (Natural Language Processing) is a subset of AI that provides
+            computers ability to process or interact with natural human speech.
+            In NLP, machine learning and deep learning are used on massive
+            amounts of data to obtain the rules and understanding of nuance in
+            human speech.
+            <br /><br />In this app, we are using Sentiment Analysis API version
+            2.1 from MeaningCloud. For more details, please visit
+            <a
+              href="https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/examples"
+              target="_blank"
+            >
+              their website</a
+            >.
+          </p>
+        </div>
+        <div id="form">
+          <textarea
+            name="entry"
+            id="entry"
+            placeholder="Please type in the texts that needs a sentiment analysis."
+          ></textarea>
+          <button type="submit" id="submit-btn">Submit to analyse</button>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Results</h2>
+        <hr />
+        <div id="result-holder">
+          <div class="psc">
+            <div>
+              <h3>Polarity</h3>
+              <div class="box resultbox" id="polarity">
+                <h4>DISAGREEMENT</h4>
+              </div>
+            </div>
+            <div>
+              <h3>Subjectivity</h3>
+              <div class="box resultbox" id="subjectivity">
+                <h4>OBJECTIVE</h4>
+              </div>
+            </div>
+            <div>
+              <h3>Irony</h3>
+              <div class="box resultbox" id="irony">
+                <h4>NONIRONIC</h4>
+              </div>
+            </div>
+          </div>
+          <div class="cp">
+            <h3>Concepts</h3>
+            <div class="box resultbox" id="concepts">
+              <p>Russian</p>
+              <p>separatist</p>
+              <p>city</p>
+              <p>video</p>
+              <p>Russian</p>
+            </div>
+          </div>
+          <div class="ts">
+            <h3>Text Snippets</h3>
+            <div class="box resultbox" id="snippet">
+              <p>
+                "Ukraine says its forces are enduring intense Russian shelling
+                there but insists the city has not been seized."
+              </p>
+              <p>
+                "However, Russian-backed separatists say they have successfully
+                entered the city and reached its centre."
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="box resultbox" id="noEntry">No entry found.</div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="box footer">
+      <p>Copyright Terry Cheng 2022 © All Rights Reserved</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
