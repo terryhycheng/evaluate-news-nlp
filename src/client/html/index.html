@@ -32,62 +32,51 @@
         </div>
         <div id="form">
           <textarea
-            name="entry"
-            id="entry"
+            name="content"
+            id="content"
             placeholder="Please type in the texts that needs a sentiment analysis."
           ></textarea>
-          <button type="submit" id="submit-btn">Submit to analyse</button>
+          <p class="hide" id="warning">
+            <em>*You must enter some texts before submitting.</em>
+          </p>
+          <button type="submit" id="submitbtn">Submit to analyse</button>
         </div>
       </section>
       <section class="card">
         <h2>Results</h2>
         <hr />
-        <div id="result-holder">
+        <div class="hide" id="result-holder">
           <div class="psc">
             <div>
               <h3>Polarity</h3>
-              <div class="box resultbox" id="polarity">
-                <h4>DISAGREEMENT</h4>
+              <div class="box resultbox">
+                <h4 id="polarity">-</h4>
               </div>
             </div>
             <div>
               <h3>Subjectivity</h3>
-              <div class="box resultbox" id="subjectivity">
-                <h4>OBJECTIVE</h4>
+              <div class="box resultbox">
+                <h4 id="subjectivity">-</h4>
               </div>
             </div>
             <div>
               <h3>Irony</h3>
-              <div class="box resultbox" id="irony">
-                <h4>NONIRONIC</h4>
+              <div class="box resultbox">
+                <h4 id="irony">-</h4>
               </div>
             </div>
           </div>
           <div class="cp">
             <h3>Concepts</h3>
-            <div class="box resultbox" id="concepts">
-              <p>Russian</p>
-              <p>separatist</p>
-              <p>city</p>
-              <p>video</p>
-              <p>Russian</p>
-            </div>
+            <div class="box resultbox" id="concepts">-</div>
           </div>
           <div class="ts">
             <h3>Text Snippets</h3>
-            <div class="box resultbox" id="snippet">
-              <p>
-                "Ukraine says its forces are enduring intense Russian shelling
-                there but insists the city has not been seized."
-              </p>
-              <p>
-                "However, Russian-backed separatists say they have successfully
-                entered the city and reached its centre."
-              </p>
-            </div>
+            <div class="box resultbox" id="snippet">-</div>
           </div>
         </div>
-        <div class="box resultbox" id="noEntry">No entry found.</div>
+        <div class="box" id="noEntry">No entry found.</div>
+        <div class="box hide" id="loading">Analysing...</div>
       </section>
     </main>
     <footer class="box footer">
