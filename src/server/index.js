@@ -1,26 +1,25 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const key = require("../../key.json");
 const dotenv = require("dotenv");
 
 //set up server
 const port = 8000;
 const app = express();
 
+dotenv.config();
+
 //middlewares
 app.use(cors());
 app.use(bodyParser.json());
 
-dotenv.config();
-
-const apiKey = process.env.API_KEY;
-
 //GET Route
 app.get("/apikey", async (req, res) => {
   try {
-    res.status(200).send({ apiKey: apiKey });
+    res.status(200).send(key);
   } catch (error) {
-    console.log("Error from POST: ", error);
+    res.status(400).send("Error from POST: ", error);
   }
 });
 
