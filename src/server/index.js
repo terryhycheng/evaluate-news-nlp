@@ -13,6 +13,7 @@ dotenv.config();
 //middlewares
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("dist"));
 
 //GET Route
 app.get("/apikey", async (req, res) => {
