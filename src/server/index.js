@@ -5,7 +5,7 @@ const key = require("../../key.json");
 const dotenv = require("dotenv");
 
 //set up server
-const port = 8000;
+const port = process.env.PORT || 8000;
 const app = express();
 
 dotenv.config();
