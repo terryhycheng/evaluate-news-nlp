@@ -2,13 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const key = require("../../key.json");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 
 //set up server
 const port = process.env.PORT || 8000;
 const app = express();
 
-dotenv.config();
+// dotenv.config();
 
 //middlewares
 app.use(cors());
